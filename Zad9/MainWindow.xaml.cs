@@ -36,19 +36,19 @@ namespace Zad9
             System.IO.File.AppendAllText("D:\\TestFile.txt", "Иванов,Иван,Иванович,Ленина,147,38,0,");
             System.IO.File.AppendAllText("D:\\TestFile.txt", "Петров,Петр,Петрович,Ленина,147,38,89106603450,");
             System.IO.File.AppendAllText("D:\\TestFile.txt", "Гыг,Гыг,Гыг,Ленина,147,38,76857465786,");
-            System.IO.File.AppendAllText("D:\\TestFile.txt", "Гаг,Гаг,Гаг,Ленина,147,38,0,n");
+            System.IO.File.AppendAllText("D:\\TestFile.txt", "Гаг,Гаг,Гаг,Ленина,147,38,0,");
 
 
             string student = File.ReadAllText(@"D:\\TestFile.txt");
 
             int v = 0;
-            while(student.Split(',')[v] != "n")
+            while(student.Split(',')[v] != "")
             //for (int v = 0; v < 28; v++)
             {
 
                 if (student.Split(',')[v] == "0")
                 {
-                    textBlock.Text += student.Split(',')[v - 6] + " " + student.Split(',')[v - 5] + " " + student.Split(',')[v - 3] + " " + student.Split(',')[v - 2] + " " + student.Split(',')[v - 1]+ "; ";
+                    textBlock.Text += student.Split(',')[v - 6] + " " + student.Split(',')[v - 5] + " " + student.Split(',')[v - 3] + " " + student.Split(',')[v - 2] + " " + student.Split(',')[v - 1]+ "; \n";
                 }
                 v++;
             }
